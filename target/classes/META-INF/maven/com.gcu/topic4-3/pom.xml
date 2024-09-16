@@ -52,6 +52,7 @@
 	</dependencies>
 
 	<build>
+		<finalName>323 Cloud Test App</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
