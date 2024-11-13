@@ -31,27 +31,24 @@ public class LoginController {
 	public String display(Model model) {
 		model.addAttribute("title", "Login Form");
 		model.addAttribute("loginModel", new LoginModel());
+
 		return "login";
 	} // end display
 
 	@PostMapping("/doLogin")
 	public String doLogin(@Valid LoginModel loginModel, BindingResult bindingResult, Model model) {
+		
 		if (bindingResult.hasErrors()) {
 			model.addAttribute("title", "Login Form");
+
 			return "login";
 		} // end if
-
-		// Print the form values out
-		System.out.println(String.format("Form with a username of %s and a password of %s", loginModel.getUsername(),
-				loginModel.getPassword()));
 
 		List<OrderModel> orders = service.getOrders();
 
 		model.addAttribute("title", "My Orders");
 		model.addAttribute("orders", orders);
 
-		// OrdersBusinessService test method
-		service.test();
 		// SecurityBusinessService authenticate method
 		security.authenticate("UserTest", "PassTest");
 

@@ -13,11 +13,6 @@ public class OrdersBusinessService implements OrdersBusinessServiceInterface {
 
 	@Autowired
 	OrderDataService service;
-	
-	@Override
-	public void test() {
-		System.out.println("Hello");
-	} // end test
 
 	@Override
 	public List<OrderModel> getOrders() {
@@ -37,12 +32,10 @@ public class OrdersBusinessService implements OrdersBusinessServiceInterface {
 
 	@Override
 	public void init() {
-		System.out.println("In the orignal Service class init method");
 	} // end init
 
 	@Override
 	public void destroy() {
-		System.out.println("In the orignal Service class destroy method");
 	} // end destroy
 
 } // end OrdersBusinessService
